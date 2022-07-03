@@ -1,1 +1,2 @@
-print('Hello from the latest release!')
+def test():
+  print('Hello from the latest release!')
