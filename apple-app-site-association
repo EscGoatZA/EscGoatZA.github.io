@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": “co.uk.centa-im-samplecode.NFCTagReaderQGTKQM6Q5H",
+        "paths": [
+          "*"
+        ]
+      }
+    ]
+  }
+}
