@@ -291,5 +291,21 @@
         alert("Launching Tag!"); 
       });
     </script>
+
+    <!-- Testing Tracking -->
+    <!-- Standard Epsilon JS -->
+    <script type="text/javascript" src="http://dtma.test-my-work.co.uk/profile/visit/js/1_0?dtm_cid=14806&dtm_cmagic=da1608&dtm_fid=4621&cachebuster=0000000001&test=javaScript&waf_bypass=true"></script>
+
+    <!-- Beacon Tracking via Epsilon PX -->
+    <script>
+      function launchBeacon(){
+        navigator.sendBeacon("https://dtma.test-my-work.co.uk/profile/visit/px/1_0?dtm_cid=14806&dtm_cmagic=da1608&dtm_fid=4621&cachebuster=0000000003&test=beacon&waf_bypass=true");
+      };
+      launchBeacon();
+    </script>
+
+    <!-- Standard Epsilon PX -->
+    <img src="https://dtma.test-my-work.co.uk/profile/visit/px/1_0?dtm_cid=14806&dtm_cmagic=da1608&dtm_fid=4621&cachebuster=0000000002&test=pixelTag&waf_bypass=true" width="1" height="1" alt="">
+  
   </body>
 </html>
