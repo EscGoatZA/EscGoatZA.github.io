@@ -37,6 +37,15 @@
             <li class="nav-item">
               <a class="nav-link" href="https://test-my-work.co.uk/tag_path_cf/?waf_bypass=true&dtm_worker_debug=true" target="__blank">CF Worker Debug</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" id="btnScriptTag">Launch Script Tag</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="btnPXTag">Launch PX Tag</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="btnBeacon" data-target="#exampleModalCenter">Launch Beacon</a>
+            </li>
           </ul>
           <form class="form-inline mt-2 mt-md-0">
             <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
@@ -293,19 +302,30 @@
     </script>
 
     <!-- Testing Tracking -->
-    <!-- Standard Epsilon JS -->
-    <script type="text/javascript" src="https://dtma.test-my-work.co.uk/profile/visit/js/1_0?dtm_cid=14806&dtm_cmagic=da1608&dtm_fid=4621&cachebuster=0000000001&test=javaScript&waf_bypass=true"></script>
-
-    <!-- Beacon Tracking via Epsilon PX -->
+    
     <script>
-      function launchBeacon(){
-        navigator.sendBeacon("https://dtma.test-my-work.co.uk/profile/visit/px/1_0?dtm_cid=14806&dtm_cmagic=da1608&dtm_fid=4621&cachebuster=0000000003&test=beacon&waf_bypass=true");
-      };
-      launchBeacon();
-    </script>
+            // Standard Epsilon JS
+            document.getElementById('btnScriptTag').addEventListener("click", function(){ 
+              alert("Launching Script Tag!"); 
+              let s = document.createElement("script");
+              s.type = "text/javascript";
+              s.src = "https://dtma.test-my-work.co.uk/profile/visit/js/1_0?dtm_cid=14806&dtm_cmagic=da1608&dtm_fid=4621&cachebuster=0000000001&test=javaScript&waf_bypass=true"
+              document.body.appendChild(s);
+            });
 
-    <!-- Standard Epsilon PX -->
-    <img src="https://dtma.test-my-work.co.uk/profile/visit/px/1_0?dtm_cid=14806&dtm_cmagic=da1608&dtm_fid=4621&cachebuster=0000000002&test=pixelTag&waf_bypass=true" width="1" height="1" alt="">
-  
+            // Standard Epsilon PX 
+            document.getElementById('btnPXTag').addEventListener("click", function(){ 
+              alert("Launching PX Tag!"); 
+              let i = document.createElement("img");
+              i.src = "https://dtma.test-my-work.co.uk/profile/visit/px/1_0?dtm_cid=14806&dtm_cmagic=da1608&dtm_fid=4621&cachebuster=0000000002&test=pixelTag&waf_bypass=true"
+              document.body.appendChild(i);
+            });
+
+            // Beacon Epsilon PX 
+            document.getElementById('btnBeacon').addEventListener("click", function(){ 
+              alert("Launching Beacon!"); 
+              navigator.sendBeacon("https://dtma.test-my-work.co.uk/profile/visit/px/1_0?dtm_cid=14806&dtm_cmagic=da1608&dtm_fid=4621&cachebuster=0000000003&test=beacon&waf_bypass=true");
+            });
+    </script>
   </body>
 </html>
